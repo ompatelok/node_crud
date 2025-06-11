@@ -1,5 +1,5 @@
 const dbConf = require('../config/db.config')
 
-const mongoose = requier("mongoose")
+const mongoose = require("mongoose")
 
 mongoose.Promise = global.Promise
