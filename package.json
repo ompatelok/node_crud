@@ -1,7 +1,7 @@
 {
   "name": "node_crud",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "dependencies": {
     "accepts": "^2.0.0",
     "body-parser": "^2.2.0",
@@ -87,6 +87,7 @@
     "wrappy": "^1.0.2"
   },
   "scripts": {
+    "dev":"nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
