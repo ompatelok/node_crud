@@ -7,6 +7,8 @@ router.post("/", blog.create);
 
 router.get("/", blog.findAll);
 
+router.get("/title", blog.findAllByTitle);
+
 router.get("/:id", blog.findOne);
 
 router.put("/:id", blog.update);

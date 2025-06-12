@@ -1,3 +1,4 @@
+const { $options } = require('sift');
 const BlogModel = require('../models/blog.model')
 
 //create new blog and save
@@ -29,7 +30,20 @@ exports.findAll = async (req,res)=>{
         res.send({message:"Blogs data",blogs:data});
     }).catch(err=>{
         console.log('Erroe in fetching data',err);
-            res.status(400).send({message:`Error in fetchinh blog ${err}`});
+        res.status(400).send({message:`Error in fetchinh blog ${err}`});
+    });
+};
+
+//find all the blogs with title
+exports.findAllByTitle = async (req,res)=>{
+    // const blog = await BlogModel.find();
+    const title = req.query.title;
+    const condition = title?{title:{$regex:new RegExp(title),$options:"i"}}:{}
+    BlogModel.find(condition).then(data=>{
+        res.send({message:"Blogs data", blogs: data});
+    }).catch(err=>{
+        console.log('Erroe in fetching data',err);
+        res.status(400).send({message:`Error in fetchinh blog ${err}`});
     });
 };
 
@@ -72,7 +86,7 @@ exports.update = (req,res)=>{
 //delete
 exports.delete = (req,res)=>{
 const id = req.params.id;
-    BlogModel.findByIdAndRemove(id)
+    BlogModel.findByIdAndDelete(id)
     .then(data=>{
         if(!data)
             res.status(400).send({message:"No blog found with id:"+id})
