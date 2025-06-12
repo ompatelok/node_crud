@@ -1,10 +1,10 @@
-const BlogModel = require('./models/blog.model')
+const BlogModel = require('../models/blog.model')
 
 //create new blog and save
 exports.create = async (reg,res)=>{
     if(req.body.title && req.body.description){
         const blog = new BlogModel({
-            tittle: req.body.title,
+            title: req.body.title,
             description: req.body.description
         });
         await blog.save().then((data)=>{
@@ -70,7 +70,7 @@ exports.update = (req,res)=>{
 }
 
 //delete
-exports.update = (req,res)=>{
+exports.delete = (req,res)=>{
 const id = req.params.id;
     BlogModel.findByIdAndRemove(id)
     .then(data=>{

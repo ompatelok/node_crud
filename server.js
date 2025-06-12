@@ -23,6 +23,12 @@ mongoose.connect(dbConfig.url,{
     process.exit()
 
 })
+const blogRouter = require('./app/routes/blog.routes')
+app.use('/api/blog',blogRouter)
+app.get('/',(req,res)=>{
+    console.log('Welcome to server');
+    res.send({message:"Welcome to server"})
+})
 
 //create server on port
 app.listen(port,()=>{

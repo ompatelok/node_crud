@@ -87,11 +87,21 @@
     "wrappy": "^1.0.2"
   },
   "scripts": {
-    "dev":"nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ompatelok/node_crud.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ompatelok/node_crud/issues"
+  },
+  "homepage": "https://github.com/ompatelok/node_crud#readme",
   "description": ""
 }
