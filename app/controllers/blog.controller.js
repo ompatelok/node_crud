@@ -1,7 +1,7 @@
 const BlogModel = require('../models/blog.model')
 
 //create new blog and save
-exports.create = async (reg,res)=>{
+exports.create = async (req,res)=>{
     if(req.body.title && req.body.description){
         const blog = new BlogModel({
             title: req.body.title,
@@ -36,7 +36,7 @@ exports.findAll = async (req,res)=>{
 //find one base on id
 exports.findOne = (req,res)=>{
     const id = req.params.id;
-    BlogModel.findBy(id)
+    BlogModel.findById(id)
     .then(data=>{
         if(!data)
             res.status(400).send({message:"No blog found with "+id})
@@ -55,7 +55,7 @@ exports.update = (req,res)=>{
     }
     const id = req.params.id;
     BlogModel.findByIdAndUpdate(id,req.body,{
-        useFrindAndModify:false
+        useFindAndModify:false
     })
     .then(data=>{
         if(!data)
