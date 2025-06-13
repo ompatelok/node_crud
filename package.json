@@ -13,6 +13,7 @@
     "content-type": "^1.0.5",
     "cookie": "^0.7.2",
     "cookie-signature": "^1.2.2",
+    "cors": "^2.8.5",
     "debug": "^4.4.1",
     "depd": "^2.0.0",
     "dunder-proto": "^1.0.1",
@@ -94,7 +95,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ompatelok/node_crud.git"
